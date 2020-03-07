@@ -11,6 +11,12 @@
     p {
       padding:0 15px;
     }
+
+    img {
+      border-radius: 6px;
+      .img();
+      margin-top: 107px;
+    }
   
   }
 
@@ -24,6 +30,19 @@
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+    }
+
+    @media @mobile {
+      .sky {
+        display: none;
+      }
+      .launch {
+        display: none;
+      }
+
+      .blast {
+        width: 100%;
+      }
     }
   }
 
@@ -46,6 +65,10 @@
     display: flex;
     justify-content: center;
 
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
+
     .walk-text {
       width: 50%;
 
@@ -57,7 +80,29 @@
         margin-bottom: 26px;
       }
 
+      @media @mobile {
+        width: 100%;
+      }
+
       .btn {
+        .button(@btn-bg-color, @porcelain);
+        border: 1px solid @ebony-clay;
+        font-size: 1.6rem;
+        padding: 15px 20px;
+        width: 30%;
+        border-radius: 5px;
+        display: flex;
+        .center();
+        transition: 0.5s;
+
+        @media @mobile {
+          width: 100%;
+        }
+
+      }
+
+      .btn:hover {
+        .button(@porcelain, @btn-bg-color);
       }
     }
 
@@ -69,6 +114,12 @@
         width: 100%;
         height: auto;
         border-radius: 10px;
+      }
+
+      @media @mobile {
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 15px;
       }
     }
   }
